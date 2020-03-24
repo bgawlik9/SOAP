@@ -1,0 +1,12 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <ns2:getCourseResponse xmlns:ns2="http://kodilla.com/courses/soap">
+      <ns2:course>
+        <ns2:name>Java Developer Plus</ns2:name>
+        <ns2:length>9</ns2:length>
+        <ns2:technology>JAVA</ns2:technology>
+      </ns2:course>
+    </ns2:getCourseResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

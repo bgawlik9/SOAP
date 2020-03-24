@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:kodilla="http://kodilla.com/courses/soap">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <kodilla:getCourseRequest>
+      <kodilla:name>Java Developer Plus</kodilla:name>
+    </kodilla:getCourseRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

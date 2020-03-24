@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kodilla.com/courses/soap"
+           targetNamespace="http://kodilla.com/courses/soap" elementFormDefault="qualified">
+
+  <xs:element name="getCourseRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="course" type="tns:course"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="course">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="length" type="xs:int"/>
+      <xs:element name="technology" type="tns:technology"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="technology">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="JAVA"/>
+      <xs:enumeration value="JAVASCRIPT"/>
+      <xs:enumeration value="HTML"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
