@@ -14,7 +14,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 task genJaxb {
-  ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
+  ext.sourcesDir = "src/main/generated-sources/jaxb"
   ext.classesDir = "${buildDir}/classes/jaxb"
   ext.schema = "src/main/resources/kodilla.xsd"
 
@@ -69,6 +69,9 @@ targetCompatibility = 1.8
 dependencies {
   compile("org.springframework.boot:spring-boot-starter-web-services")
   testCompile("org.springframework.boot:spring-boot-starter-test")
+  compile('javax.xml.bind:jaxb-api:2.3.0')
+  compile('javax.activation:activation:1.1')
+  compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
   compile("wsdl4j:wsdl4j:1.6.1")
   jaxb("org.glassfish.jaxb:jaxb-xjc:2.2.11")
   compile(files(genJaxb.classesDir).builtBy(genJaxb))

@@ -13,7 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 public class CourseEndpoint {
   private static final String NAMESPACE_URI = "http://kodilla.com/courses/soap";
 
-  private CoursesRepository coursesRepository;
+  private final CoursesRepository coursesRepository;
 
   @Autowired
   public CourseEndpoint(CoursesRepository coursesRepository) {
