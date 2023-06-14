@@ -34,20 +34,20 @@ task genJaxb {
 
       xjc(destdir: sourcesDir, schema: schema) {
         arg(value: "-wsdl")
-        produces(dir: sourcesDir, includes: "**/*.java")
+        produces(dir: sourcesDir, includes: "/.java")
       }
 
-      javac(destdir: classesDir, source: 1.8, target: 1.8, debug: true,
-            debugLevel: "lines,vars,source",
-            classpath: configurations.jaxb.asPath) {
+      javac(destdir: classesDir, source: 11, target: 11, debug: true,
+              debugLevel: "lines,vars,source",
+              classpath: configurations.jaxb.asPath) {
         src(path: sourcesDir)
-        include(name: "**/*.java")
+        include(name: "/.java")
         include(name: "*.java")
       }
 
       copy(todir: classesDir) {
         fileset(dir: sourcesDir, erroronmissingdir: false) {
-          exclude(name: "**/*.java")
+          exclude(name: "/.java")
         }
       }
     }
@@ -60,7 +60,7 @@ configurations {
 
 bootJar {
   baseName = 'kodilla-soap'
-  version =  '1.0.0'
+  version = '1.0.0'
   from genJaxb.classesDir
 }
 
@@ -68,8 +68,8 @@ repositories {
   mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 11
+targetCompatibility = 11
 
 dependencies {
   implementation('javax.xml.bind:jaxb-api:2.3.0')
